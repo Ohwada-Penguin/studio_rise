@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*-----共通CSS-----*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    /*font-familyの記述はもう一回おさらいしとく*/
+    font-family:"Meiryo", sans-serif;
+}
+
+html{
+    /*お試しでrem基準*/
+    font-size:10px;
+}
+
+.bold{
+    font-weight:bold;
+    letter-spacing:0.1rem
+}
+
+/*全体の幅設定*/
+.wrap{
+    width:1000px;
+    max-width:100%;
+    margin:0 auto;
+
+    /*確認用*/
+    /*height:2000px;*/
+    /*border:2px #e16b8c dotted;*/
+}
+
+/*-----記述-----*/
+header{
+    /*確認用*/
+    /*border:2px #e16b8c dotted;*/
+}
+
+header nav ul{
+    padding-top:2rem;
+    width:100%;
+    /*height:9rem;*/
+}
+
+.glnav ul li{
+    display:inline-block;
+    list-style:none;
+    vertical-align:bottom;
+    font-size:1.5rem;
+}
+
+/*ロゴをliから外すか悩む*/
+.glnav ul li:nth-of-type(n+3){
+    margin-left:2rem;
+}
+
+.glnav ul li a{
+    text-decoration:none;
+    color:#666;
+
+/*****お試し実装ココカラ*****/
+    /*ノビルセンの基準設定*/
+    position:relative;
+    /*下二行消しても挙動は変わらず、なんのための記述かは後で調べる*/
+    display:inline-block;
+    /*transition:0.5s;*/
+}
+.glnav ul li a::after{
+    /*.glnav ul li aを基準に絶対位置移動*/
+    position:absolute;
+    /*width:0だから一見視認できないやつ*/
+    width:0;
+    /*下から0.3rem分上に移動した位置からほにゃらら*/
+    bottom:0.3rem;
+    /*.glnav ul li aのwidthを基準に左から50%移動した位置からほにゃらら*/
+    left:50%;
+    content:"";
+    border-bottom:1px solid #bbb;
+    /*
+    始点がleftから50%だから、-50%移動させてる。
+    ニュアンスとしては下記の:hover時のwidth:100%;に伸びながら、X-50%方向に移動している感じ。
+    */
+    transform:translateX(-50%);
+    /*超重要なプロパティ。上記の状態から下記の:hover時のcssを適用するまでの時間がtransitionになってる。*/
+    transition:0.3s;
+}
+
+/*:hover時の::after要素のプロパティ*/
+.glnav ul li a:hover::after{
+    /*
+    hoverすると上記のwidth:0;から.glnav ul li a要素のwidth100%の長さになる。
+    transform:translateX(-50%);のおかげで中央から左右へと伸びているように見えてる。
+    */
+    width:100%;
+}
+/*****お試し実装ココマデ*****/
+
+.glnav ul li a:hover{
+    color:#bbb;
+}
+
+/*img使った方がよかったか…？*/
+.logo{
+    /*擬似トリミング用にボックスサイズ設定*/
+    width:12rem;
+    height:5rem;
+    background:url("../img-rise/glnv-splash.gif") left top no-repeat;
+    background-size:17rem auto;
+    /*heddenにしないと親をぶち抜くゾ*/
+    overflow:hidden;
+
+    /*確認用*/
+    /*border:1px #e16b8c solid;*/
+}
+.content{
+    /*section.information-newsのための基準*/
+    position:relative;
+
+    /*確認用*/
+    /*border:1px #e16b8c dotted;*/
+}
+
+.background{
+    width:100%;
+    height:0;
+    background:url("../img-rise/mv.jpg") center no-repeat;
+    /*
+    padding-top,padding-bottomの％単位の基準は親要素(.wrap)のwidth。.wrapのwidthが1000px。
+    padding-top = calc(100%*531/980) ≒ 542px
+     →高さが542pxで幅が100%の表示領域を確保。画像は531x930なので縮小なしで表示可能
+    */
+    /*参考URL:https://taneppa.net/responsive_background_image/*/
+    /*↓はあくまで表示領域の設定。このやり方は画像の寸法がわかってないと無理。知らない時のやり方は調べること*/
+    padding-top:calc(100%*531/980);
+
+    /*padding-topによって確保された表示領域に対する表示サイズの設定*/
+    background-size:100% auto;
+}
+
+.information-news{
+    line-height:2rem;
+    width:47%;
+    height:28rem;
+    padding:1.5rem 2rem;
+    color:#666;
+    background-color:#fff;
+    /*opacityは透過率。要は不透明度*/
+    opacity:0.85;
+    position:absolute;
+    top:2.5rem;
+    left:2.5rem;
+    overflow:scroll;
+
+    /*確認用*/
+    /*border:1px #e16b8c dotted;*/
+}
+.news-heading{
+    margin-bottom:5rem;
+}
+
+.news-heading h1{
+    font-size:2rem;
+    font-weight:normal;
+}
+
+/*各段落ごとに外余白の設定。<p>のほうが手っ取り早かった説*/
+.information-news dd+dt,span+aside{
+    margin-top:2rem;
+}
+
+/*更新日付の配置調整*/
+section .update{
+    display:block;
+    text-align:right;
+}
+
+.footer-copyright{
+    color:#666;
+    text-align:right;
+}
