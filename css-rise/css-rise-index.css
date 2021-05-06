@@ -32,6 +32,7 @@ html{
 }
 
 /*-----記述-----*/
+/*****ナビで使ってるCSSココカラ*****/
 header{
     /*確認用*/
     /*border:2px #e16b8c dotted;*/
@@ -66,7 +67,7 @@ header nav ul{
     display:inline-block;
     /*transition:0.5s;*/
 }
-.glnav ul li a::after{
+.glnav ul li a:not(.header-logo)::after{
     /*.glnav ul li aを基準に絶対位置移動*/
     position:absolute;
     /*width:0だから一見視認できないやつ*/
@@ -87,7 +88,7 @@ header nav ul{
 }
 
 /*:hover時の::after要素のプロパティ*/
-.glnav ul li a:hover::after{
+.glnav ul li a:hover:not(.header-logo)::after{
     /*
     hoverすると上記のwidth:0;から.glnav ul li a要素のwidth100%の長さになる。
     transform:translateX(-50%);のおかげで中央から左右へと伸びているように見えてる。
@@ -101,18 +102,21 @@ header nav ul{
 }
 
 /*img使った方がよかったか…？*/
-.logo{
+.logo > .header-logo{
     /*擬似トリミング用にボックスサイズ設定*/
-    width:12rem;
+    width:11rem;
     height:5rem;
     background:url("../img-rise/glnv-splash.gif") left top no-repeat;
     background-size:17rem auto;
     /*heddenにしないと親をぶち抜くゾ*/
     overflow:hidden;
+    vertical-align:bottom;
 
     /*確認用*/
     /*border:1px #e16b8c solid;*/
 }
+/*****ナビで使ってるCSSココマデ*****/
+
 .content{
     /*section.information-newsのための基準*/
     position:relative;

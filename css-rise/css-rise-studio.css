@@ -32,7 +32,9 @@ html{
 }
 
 /*-----記述-----*/
+/*****ナビで使ってるCSSココカラ*****/
 header{
+    border-bottom:1px dotted #666;
     /*確認用*/
     /*border:2px #e16b8c dotted;*/
 }
@@ -66,7 +68,7 @@ header nav ul{
     display:inline-block;
     /*transition:0.5s;*/
 }
-.glnav ul li a::after{
+.glnav ul li a:not(.header-logo)::after{
     /*.glnav ul li aを基準に絶対位置移動*/
     position:absolute;
     /*width:0だから一見視認できないやつ*/
@@ -87,7 +89,7 @@ header nav ul{
 }
 
 /*:hover時の::after要素のプロパティ*/
-.glnav ul li a:hover::after{
+.glnav ul li a:hover:not(.header-logo)::after{
     /*
     hoverすると上記のwidth:0;から.glnav ul li a要素のwidth100%の長さになる。
     transform:translateX(-50%);のおかげで中央から左右へと伸びているように見えてる。
@@ -100,92 +102,49 @@ header nav ul{
     color:#bbb;
 }
 
-/*img使った方がよかったか…？*/
-.logo{
+.logo > .header-logo{
     /*擬似トリミング用にボックスサイズ設定*/
-    width:12rem;
+    width:11rem;
     height:5rem;
     background:url("../img-rise/glnv-splash.gif") left top no-repeat;
     background-size:17rem auto;
     /*heddenにしないと親をぶち抜くゾ*/
     overflow:hidden;
+    vertical-align:bottom;
 
     /*確認用*/
     /*border:1px #e16b8c solid;*/
 }
-.content{
-    /*section.information-newsのための基準*/
-    position:relative;
+/*****ナビで使ってるCSSココマデ*****/
 
-    /*確認用*/
-    /*border:1px #e16b8c dotted;*/
+main{
+    padding:3rem 2rem;
 }
 
-.background{
-    width:100%;
-    height:0;
-    background:url("../img-rise/mv.jpg") center no-repeat;
-    /*
-    padding-top,padding-bottomの％単位の基準は親要素(.wrap)のwidth。.wrapのwidthが1000px。
-    padding-top = calc(100%*531/980) ≒ 542px
-     →高さが542pxで幅が100%の表示領域を確保。画像は531x930なので縮小なしで表示可能
-    */
-    /*参考URL:https://taneppa.net/responsive_background_image/*/
-    /*↓はあくまで表示領域の設定。このやり方は画像の寸法がわかってないと無理。知らない時のやり方は調べること*/
-    padding-top:calc(100%*531/980);
-
-    /*padding-topによって確保された表示領域に対する表示サイズの設定*/
-    background-size:100% auto;
+.floor-nav{
+    width:1fr;
+    border:1px solid #000;
 }
 
-.information-news{
-    font-size:1.1rem;
-    line-height:2rem;
-    width:47%;
-    height:27rem;
-    padding:1.5rem 2rem;
-    color:#666;
-    background-color:#fff;
-    /*opacityは透過率。要は不透明度*/
-    opacity:0.85;
-    position:absolute;
-    top:3rem;
-    left:3rem;
-    overflow:scroll;
-
-    /*確認用*/
-    /*border:1px #e16b8c dotted;*/
+li{
+    list-style-type:none;
 }
 
-.information-news:hover{
-    opacity:0.95;
+.floor-nav li+li{
+    margin-top:2px;
+}
+.floor-nav img+img{
+    margin-left:3px;
 }
 
-.news-heading{
-    margin-bottom:5rem;
-}
 
-.news-heading h1{
-    font-weight:normal;
-    margin:0;
-}
-
-/*各段落ごとに外余白の設定。<p>のほうが手っ取り早かった説*/
-.information-news dd+dt,span+aside{
-    margin-top:2rem;
-}
-
-/*更新日付の配置調整*/
-section .update{
-    display:block;
-    text-align:right;
-}
-
+/*****フッターCSSココカラ*****/
 .footer-copyright{
     font-size:1.2rem;
     letter-spacing:0.05rem;
     margin:1.2rem 0 0 0;
     color:#666;
     text-align:right;
-
+    border-top:1px dotted #666;
 }
+/*****フッターCSSココマデ*****/
