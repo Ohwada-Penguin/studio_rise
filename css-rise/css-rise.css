@@ -1,7 +1,9 @@
 @charset "utf-8";
+@import url("./normalize.css");
 
 /*-----共通CSS-----*/
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -161,6 +163,7 @@ header nav ul{
 .news-heading h1{
     font-size:2rem;
     font-weight:normal;
+    margin:0;
 }
 
 /*各段落ごとに外余白の設定。<p>のほうが手っ取り早かった説*/
