@@ -3,13 +3,13 @@
 
 /*-----共通CSS-----*/
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
     /*font-familyの記述はもう一回おさらいしとく*/
     font-family:"Meiryo", sans-serif;
 }
+
 
 html{
     /*お試しでrem基準*/
@@ -18,7 +18,6 @@ html{
 
 .bold{
     font-weight:bold;
-    letter-spacing:0.1rem
 }
 
 /*全体の幅設定*/
@@ -39,7 +38,7 @@ header{
 }
 
 header nav ul{
-    padding-top:2rem;
+    padding:2rem 0 0.3rem 0;
     width:100%;
     /*height:9rem;*/
 }
@@ -72,8 +71,8 @@ header nav ul{
     position:absolute;
     /*width:0だから一見視認できないやつ*/
     width:0;
-    /*下から0.3rem分上に移動した位置からほにゃらら*/
-    bottom:0.3rem;
+    /*下から0.1rem分上に移動した位置からほにゃらら*/
+    bottom:0.1rem;
     /*.glnav ul li aのwidthを基準に左から50%移動した位置からほにゃらら*/
     left:50%;
     content:"";
@@ -140,28 +139,33 @@ header nav ul{
 }
 
 .information-news{
+    font-size:1.1rem;
     line-height:2rem;
     width:47%;
-    height:28rem;
+    height:27rem;
     padding:1.5rem 2rem;
     color:#666;
     background-color:#fff;
     /*opacityは透過率。要は不透明度*/
     opacity:0.85;
     position:absolute;
-    top:2.5rem;
-    left:2.5rem;
+    top:3rem;
+    left:3rem;
     overflow:scroll;
 
     /*確認用*/
     /*border:1px #e16b8c dotted;*/
 }
+
+.information-news:hover{
+    opacity:0.95;
+}
+
 .news-heading{
     margin-bottom:5rem;
 }
 
 .news-heading h1{
-    font-size:2rem;
     font-weight:normal;
     margin:0;
 }
