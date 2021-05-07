@@ -96,6 +96,7 @@ header nav ul{
     transform:translateX(-50%);のおかげで中央から左右へと伸びているように見えてる。
     */
     width:100%;
+    transition:0.3s;
 }
 /*****お試し実装ココマデ*****/
 
