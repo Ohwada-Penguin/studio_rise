@@ -23,8 +23,10 @@ html{
 /*全体の幅設定*/
 .wrap{
     width:1000px;
+    min-width:768px;
     max-width:100%;
     margin:0 auto;
+    padding:0 2rem;
 
     /*確認用*/
     /*height:2000px;*/
