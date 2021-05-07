@@ -236,13 +236,30 @@ section .reservation{
 }
 
 .mail-address{
+    color:#666;
+    text-decoration:none;
     font-size:1.5rem;
     font-weight:600;
+    position:relative;
 }
 .mail-address::before{
     content:url("../img-rise/mail.png");
     margin-right:0.5rem;
 }
+.mail-address::after{
+    content:"";
+    width:0;
+    border-bottom:1px solid #bbb;
+    position:absolute;
+    left:51%;
+    bottom:0.2rem;
+    transform:translateX(-50%);
+    transition:0.3s;
+}
+.mail-address:hover::after{
+    width:98%;
+}
+
 section .reservation{
     text-indent:-3rem;
     padding-left:3rem;
