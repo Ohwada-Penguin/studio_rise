@@ -16,6 +16,10 @@ html{
     font-size:10px;
 }
 
+a{
+    text-decoration:none;
+}
+
 .bold{
     font-weight:bold;
 }
@@ -60,7 +64,6 @@ header nav ul{
 }
 
 .glnav ul li a{
-    text-decoration:none;
     color:#666;
 
 /*****お試し実装ココカラ*****/
@@ -132,7 +135,7 @@ main{
     max-width:100%;
     grid-template-rows:1fr;
     grid-template-columns:1fr 1fr;
-    gap:1rem;
+    gap:4rem;
     padding:1rem 0;
 }
 .grid-sub-container-01{
@@ -156,7 +159,7 @@ main{
     /*border:1px solid #000;*/
 }
 
-ul{
+.floor-nav ul{
     display:block;
 }
 
@@ -171,7 +174,7 @@ ul{
     display:inline-block;
 }
 /*スタジオ写真のleftに外余白*/
-.floor-nav img:last-of-type{
+.floor-nav > .foolr-nav-st > img:last-of-type{
     margin-left:3px;
 }
 
@@ -198,6 +201,7 @@ ul{
 .st-nav-off, .st-nav-hover{
     position:absolute;
     left:0;
+    opacity:1;
     transition:0.6s;
 }
 .st-nav-off:hover{
@@ -209,7 +213,7 @@ section{
     grid-row:1/2;
     grid-column:2/3;
     position:relative;
-    bottom:15%;
+    top:0;
     /*確認用border*/
     /*border:1px dotted #666;*/
 }
@@ -232,12 +236,15 @@ section dd{
 section dd+dd{
     margin-top:2rem;
 }
-section .about-us{
-    line-height:2.5rem;
+
+.about-us dd{
+    padding-left:3rem;
 }
 
 /*インデント調整*/
-section .reservation{
+.reservation{
+    line-height:2.5rem;
+    letter-spacing:0.1rem;
     text-indent:-3rem;
     padding-left:3rem;
 }
@@ -267,7 +274,7 @@ section .reservation{
 .mail-address::after{
     content:"";
     width:0;
-    border-bottom:1px solid #bbb;
+    border-bottom:1px solid #666;
     position:absolute;
     left:51%;
     bottom:0.2rem;
@@ -278,9 +285,8 @@ section .reservation{
     width:98%;
 }
 
-section .reservation{
-    text-indent:-3rem;
-    padding-left:3rem;
+a[download]{
+    color:#58b2dc;
 }
 
 
