@@ -122,6 +122,7 @@ header nav ul{
     /*border:1px #e16b8c solid;*/
 }
 /*****ナビで使ってるCSSココマデ*****/
+
 .reserve-logo{
     display:block;
     min-width:288px;
@@ -135,16 +136,16 @@ main{
     max-width:100%;
     min-height:300px;
     grid-template-rows:1fr;
-    grid-template-columns:1fr 1fr;
-    gap:4rem;
+    grid-template-columns:60% 1fr;
+    gap:2.5rem;
     padding:1rem 0;
 }
 .grid-sub-container-01{
     display:grid;
-    max-height:293px;
+    /*max-height:293px;*/
     grid-template-rows:1fr;
-    grid-template-columns:145px 1fr;
-    gap:1rem;
+    grid-template-columns:71px 1fr;
+    gap:2.5rem;
     grid-row:1/2;
     grid-column:1/2;
     /*確認用border*/
@@ -154,24 +155,29 @@ main{
 .grid-sub-container-01 > .floor-nav{
     grid-row:1/2;
     grid-column:1/2;
+    width:71px;
+    height:74px;
     font-size:0;
     line-height:0;
     /*確認用border*/
     /*border:1px solid #000;*/
 }
 
+/*
 .floor-nav ul{
     display:block;
 }
+*/
 
-.floor-nav li{
-    /*min-width:145px;*/
+.floor-nav > ul > li{
     list-style-type:none;
 }
 .floor-nav > ul > li+li{
     margin-top:3px;
 }
-
+.foolr-nav > ul > li > img{
+    display:inline-block;
+}
 /*スタジオ写真のleftに外余白*/
 .st-image{
     margin-left:3px;
@@ -179,10 +185,8 @@ main{
 
 /*このhover時の画像の切り替えは絶対js使った方が早い･簡単･修正超絶楽*/
 .floor-nav-st{
-    text-align:right;
     position:relative;
 }
-
 .st-nav-off{
     position:absolute;
     left:0;
@@ -204,7 +208,7 @@ main{
 .floor-img > img{
     display:block;
     width:100%;
-    position:absolute;
+    /*position:absolute;*/
     bottom:0;
 }
 
@@ -234,58 +238,6 @@ section dd{
 }
 section dd+dd{
     margin-top:2rem;
-}
-
-.about-us dd{
-    padding-left:3rem;
-}
-
-/*インデント調整*/
-.reservation{
-    line-height:2.5rem;
-    letter-spacing:0.1rem;
-    text-indent:-3rem;
-    padding-left:3rem;
-}
-
-.telephone-num{
-    font-size:2.5rem;
-    font-weight:bold;
-}
-.telephone-num::before{
-    content:url("../img-rise/tel.png");
-    margin-right:0.5rem;
-    width:1rem;
-    height:1rem;
-}
-
-.mail-address{
-    color:#666;
-    text-decoration:none;
-    font-size:1.5rem;
-    font-weight:600;
-    position:relative;
-}
-.mail-address::before{
-    content:url("../img-rise/mail.png");
-    margin-right:0.5rem;
-}
-.mail-address::after{
-    content:"";
-    width:0;
-    border-bottom:1px solid #666;
-    position:absolute;
-    left:51%;
-    bottom:0.2rem;
-    transform:translateX(-50%);
-    transition:0.3s;
-}
-.mail-address:hover::after{
-    width:98%;
-}
-
-a[download]{
-    color:#58b2dc;
 }
 
 
