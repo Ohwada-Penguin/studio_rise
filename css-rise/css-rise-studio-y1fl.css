@@ -129,6 +129,7 @@ header nav ul{
 }
 main{
     padding:1rem;
+    background:url("../img-rise/studio-y1fl-bg.png") 96% 104% no-repeat;
 }
 
 .grid-container{
@@ -287,9 +288,18 @@ section dd+dd{
 .st-detail-note::before{
     content:"※";
 }
+
+.floor-map{
+    display:block;
+    grid-column:1/2;
+    grid-row:2/3;
+}
 /*****.grid-sub-container-02内のCSSココマデ*****/
 
 /*****フッターCSSココカラ*****/
+footer{
+    margin-bottom:3rem;
+}
 .footer-copyright{
     font-size:1.2rem;
     letter-spacing:0.05rem;
